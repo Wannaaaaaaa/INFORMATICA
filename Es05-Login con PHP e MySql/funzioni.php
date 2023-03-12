@@ -1,6 +1,6 @@
 <?php
 
-function form()
+function form_login()
 {
 	?>
 	<form name="formLogin" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
