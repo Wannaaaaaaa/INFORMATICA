@@ -19,7 +19,7 @@ if(!isset($_SESSION['login']))
 	if(!isset($_POST['invio']))
 	{
 		//Visualizzo il form
-        form();
+                form_login();
 	}
 	else
 	{
