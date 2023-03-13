@@ -114,4 +114,46 @@ function registrazione()
 	//termino connessione al database
 	$pdo=null;
 }
+function form_reset()
+{
+	?>
+	<font color=#FF0000>
+    <h1>BENVENUTI NEL FORM DI RIPRISTINO PASSWORD</h1>
+    </font>
+    <h4>Inserire i dati richiesti:</h4>
+	<form name="formLogin" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+	Nuova password: <input type="password" name="new"> <br> <br>
+	Conferma password: <input type="password" name="confirm"> </br> </br> 
+	<input type="submit"  name="invio" value="invio"> <br> <br>
+	<input type="reset"   value="cancella"> </br>
+	</form>
+    <p>Torna alla pagina<a href="index.php"> home!</a>.</p>
+	<?php
+}
+function reset_password()
+{
+	$new=$_POST['new'];
+	$confirm=$_POST['confirm'];
+	$username=$_POST['username'];
+	$pasword=$_POST['password'];
+	
+	//query per database
+	$pdo = new PDO("mysql:host=".DB_SERVER.";dbname=".DB_NAME, DB_USER, DB_PASSWORD);
+	
+	//inserisco i dati
+	$reset = "UPDATE utente set pasword='$new','$confirm' WHERE username = '$username' AND pasword = '$pasword'";
+	
+	if($pdo->query($reset)==true)
+	{
+        echo "Reset della password avvenuta con successo!";
+		echo "<a href='login.php'>Login!</a><br>";
+    }
+	else
+	{
+        $_SESSION['login'] = false;
+		echo "Password non valida!";
+	}
+	//termino connessione al database
+	$pdo=null;
+}
 ?>
