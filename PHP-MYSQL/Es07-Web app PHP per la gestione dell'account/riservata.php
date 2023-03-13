@@ -11,7 +11,7 @@ session_start();
 if(isset($_SESSION["login"])) 
 {
 	?>
-	<p><h1>Benvenuto <?php echo $_SESSION["username"]; ?></h1></p>
+	<p><h1>Benvenuto <?php echo $_SESSION["login"]; ?></h1></p>
     <a href="index.php">Vai alla home del sito!</a><br>
     <a href="logout.php">Logout</a>
     <?php   
