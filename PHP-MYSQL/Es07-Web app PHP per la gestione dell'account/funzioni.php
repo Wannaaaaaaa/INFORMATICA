@@ -14,7 +14,7 @@ function form_login()
 	<input type="reset"   value="cancella"> </br>
 	</form>
     <p>Non sei registrato? <a href="registrazione.php"> Registrati subito!</a>.</p>
-	<p>Password dimenticata? <a href="reset.php"> Cambia Password!</a>.</p></br>
+	<p>Hai dimenticato la password? <a href="reset.php"> Cambia Password!</a>.</p></br>
 	<?php
 }
 
