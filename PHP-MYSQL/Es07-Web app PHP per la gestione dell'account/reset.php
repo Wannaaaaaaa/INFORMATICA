@@ -12,23 +12,16 @@ define('DB_NAME', 'es05');
 define('DB_USER', 'root');
 define('DB_PASSWORD', '');
 
-if(!isset($_SESSION['login']))
-{
-	if(!isset($_POST['invio']))
-	{		  
-        //visualizzoform di reset password
-		form_reset();
-	}
-	else 
-    {
-		//reset password
-		reset_password();
-	}
+if(!isset($_POST['invio']))
+{		  
+    //visualizzo form di reset password
+	form_resetPass();
 }
-else
+else 
 {
-	echo "Password cambiata!<br>";
-	echo "<a href='login.php'></a><br>";
+	//reset password
+	reset_password();
+	echo "<a href='login.php'>Login<br></a>";
 }
 ?>
 </body>
