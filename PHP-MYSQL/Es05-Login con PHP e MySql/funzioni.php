@@ -22,13 +22,13 @@ function login()
 {	
 	//variabili login
 	$username=$_POST['username'];
-	$pasword=$_POST['password'];
+	$password=$_POST['password'];
 	
 	//query per database
 	$pdo = new PDO("mysql:host=".DB_SERVER.";dbname=".DB_NAME, DB_USER, DB_PASSWORD);	
 	
 	//interogazione database
-	$interr = "SELECT * FROM utente WHERE username = '$username' AND pasword = '$pasword'";
+	$interr = "SELECT * FROM utente WHERE username = '$username' AND password = '$password'";
 	//risultato interrogazione
 	$ris = $pdo->query($interr);
 	
