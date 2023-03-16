@@ -6,13 +6,13 @@ CREATE TABLE utente
 (
     id INT NOT NULL AUTO_INCREMENT,
     username VARCHAR(20) NOT NULL,
-    pasword VARCHAR(20) NOT NULL,
+    password VARCHAR(20) NOT NULL,
     PRIMARY KEY (id)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 
 //inserimento dati nuova istanza istanza 
 INSERT 
-INTO utente(id, username, pasword)
+INTO utente(id, username, password)
 VALUES (NULL, 'Flavio', 'ciao');
 
 //aggiunti nuovi attributi
@@ -34,7 +34,7 @@ WHERE id='1';
 
 //inserimento dati per nuova istanza
 INSERT 
-INTO utente(id, username, pasword,mail,nascita)
+INTO utente(id, username, password,mail,nascita)
 VALUES (NULL, 'Andrea', 'prova','andreaprova@gmail.com','2000-09-12');
 
 //aggiunti nuovi attributi
