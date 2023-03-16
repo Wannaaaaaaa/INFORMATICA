@@ -48,13 +48,13 @@ function registrazione()
 	$mail=$_POST['email'];
 	$nascita=$_POST['nascita'];
 	$username=$_POST['username'];
-	$pasword=$_POST['password'];
+	$password=$_POST['password'];
 	
 	//query per database
 	$pdo = new PDO("mysql:host=".DB_SERVER.";dbname=".DB_NAME, DB_USER, DB_PASSWORD);
 	
 	//inserisco i dati
-	$registr = "INSERT INTO utente(id, nome, cognome, nascita, mail, username, pasword) VALUES(NULL, '$nome','$cognome','$nascita','$mail','$username','$pasword')";
+	$registr = "INSERT INTO utente(id, nome, cognome, nascita, mail, username, pasword) VALUES(NULL, '$nome','$cognome','$nascita','$mail','$username','$password')";
 	
 	if($pdo->query($registr)==true)
 	{
