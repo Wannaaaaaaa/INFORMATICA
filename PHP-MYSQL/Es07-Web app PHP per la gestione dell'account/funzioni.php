@@ -22,13 +22,13 @@ function login()
 {	
 	//variabili login
 	$username=$_POST['username'];
-	$pasword=$_POST['password'];
+	$password=$_POST['password'];
 	
 	//query per database
 	$pdo = new PDO("mysql:host=".DB_SERVER.";dbname=".DB_NAME, DB_USER, DB_PASSWORD);	
 	
 	//interogazione database
-	$interr = "SELECT * FROM utente WHERE username = '$username' AND pasword = '$pasword'";
+	$interr = "SELECT * FROM utente WHERE username = '$username' AND password = '$password'";
 	//risultato interrogazione
 	$ris = $pdo->query($interr);
 	
@@ -93,13 +93,13 @@ function registrazione()
 	$mail=$_POST['email'];
 	$nascita=$_POST['nascita'];
 	$username=$_POST['username'];
-	$pasword=$_POST['password'];
+	$password=$_POST['password'];
 	
 	//query per database
 	$pdo = new PDO("mysql:host=".DB_SERVER.";dbname=".DB_NAME, DB_USER, DB_PASSWORD);
 	
 	//inserisco i dati
-	$registr = "INSERT INTO utente(id, nome, cognome, nascita, mail, username, pasword) VALUES(NULL, '$nome','$cognome','$nascita','$mail','$username','$pasword')";
+	$registr = "INSERT INTO utente(id, nome, cognome, nascita, mail, username, pasword) VALUES(NULL, '$nome','$cognome','$nascita','$mail','$username','$password')";
 	
 	if($pdo->query($registr)==true)
 	{
@@ -135,13 +135,13 @@ function reset_password()
 	$new=$_POST['new'];
 	$confirm=$_POST['confirm'];
 	$username=$_POST['username'];
-	$pasword=$_POST['password'];
+	$password=$_POST['password'];
 	
 	//query per database
 	$pdo = new PDO("mysql:host=".DB_SERVER.";dbname=".DB_NAME, DB_USER, DB_PASSWORD);
 	
 	//inserisco i dati
-	$reset = "UPDATE utente set pasword='$new','$confirm' WHERE username = '$username' AND pasword = '$pasword'";
+	$reset = "UPDATE utente set pasword='$new','$confirm' WHERE username = '$username' AND password = '$password'";
 	
 	if($pdo->query($reset)==true)
 	{
