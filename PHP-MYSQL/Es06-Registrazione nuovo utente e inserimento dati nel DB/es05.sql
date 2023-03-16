@@ -17,7 +17,7 @@ WHERE id='1';
 
 //inserimento dati per nuova istanza
 INSERT 
-INTO utente(id, username, pasword,mail,nascita)
+INTO utente(id, username, password,mail,nascita)
 VALUES (NULL, 'Andrea', 'prova','andreaprova@gmail.com','2000-09-12');
 
 //aggiunti nuovi attributi
